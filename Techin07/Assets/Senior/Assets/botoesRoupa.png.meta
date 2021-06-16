@@ -1,0 +1,535 @@
+fileFormatVersion: 2
+guid: 608f2985165a3ff42b0f3d184918491d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6826904294690433267
+    second: botoesRoupa_0
+  - first:
+      213: 305861405027656695
+    second: botoesRoupa_1
+  - first:
+      213: 7275462019972489282
+    second: botoesRoupa_2
+  - first:
+      213: -8191011800164336204
+    second: botoesRoupa_3
+  - first:
+      213: -345045622317435102
+    second: botoesRoupa_4
+  - first:
+      213: 745900753667082738
+    second: botoesRoupa_5
+  - first:
+      213: 1423825704206582677
+    second: botoesRoupa_6
+  - first:
+      213: -340114623044277066
+    second: botoesRoupa_7
+  - first:
+      213: 713936571678598812
+    second: botoesRoupa_8
+  - first:
+      213: 8343274628819837523
+    second: botoesRoupa_9
+  - first:
+      213: -8481909432080460067
+    second: botoesRoupa_10
+  - first:
+      213: -2765897920785965349
+    second: botoesRoupa_11
+  - first:
+      213: -2149867010912968695
+    second: botoesRoupa_12
+  - first:
+      213: 3306193216965965157
+    second: botoesRoupa_13
+  - first:
+      213: -2327815381237953471
+    second: botoesRoupa_14
+  - first:
+      213: -5046081761097051683
+    second: botoesRoupa_15
+  - first:
+      213: 7009506762331517281
+    second: botoesRoupa_16
+  - first:
+      213: 8640438055852233075
+    second: botoesRoupa_17
+  - first:
+      213: -7408182459575049725
+    second: botoesRoupa_18
+  - first:
+      213: -6189985970477162947
+    second: botoesRoupa_19
+  - first:
+      213: 2439615568626300016
+    second: botoesRoupa_20
+  - first:
+      213: 9022672678854964602
+    second: botoesRoupa_21
+  - first:
+      213: -5002310953230897561
+    second: botoesRoupa_22
+  - first:
+      213: -3100244785990812578
+    second: botoesRoupa_23
+  - first:
+      213: 9120526748525430708
+    second: botoesRoupa_24
+  - first:
+      213: -1674422180961270325
+    second: botoesRoupa_25
+  - first:
+      213: 3460849325633958800
+    second: botoesRoupa_26
+  - first:
+      213: -577205622051219611
+    second: botoesRoupa_27
+  - first:
+      213: 2969412190777860300
+    second: botoesRoupa_28
+  - first:
+      213: 111180584939974495
+    second: botoesRoupa_29
+  - first:
+      213: -1609850341832090069
+    second: botoesRoupa_30
+  - first:
+      213: -8515176616223411911
+    second: botoesRoupa_31
+  - first:
+      213: 2490441903650007335
+    second: botoesRoupa_32
+  - first:
+      213: 2898927771833411812
+    second: botoesRoupa_33
+  - first:
+      213: 711669565648933441
+    second: botoesRoupa_34
+  - first:
+      213: 7524661008125322965
+    second: botoesRoupa_35
+  - first:
+      213: -5004985958307184894
+    second: botoesRoupa_36
+  - first:
+      213: 4546413620948533000
+    second: botoesRoupa_37
+  - first:
+      213: -8876239461114655483
+    second: botoesRoupa_38
+  - first:
+      213: -2198329537553859642
+    second: botoesRoupa_39
+  - first:
+      213: 5997672779409925622
+    second: botoesRoupa_40
+  - first:
+      213: -3679085695121077593
+    second: botoesRoupa_41
+  - first:
+      213: 4917462973547868157
+    second: botoesRoupa_42
+  - first:
+      213: 7183134665665178415
+    second: botoesRoupa_43
+  - first:
+      213: 1859591478377233860
+    second: botoesRoupa_44
+  - first:
+      213: 6656976118475942629
+    second: botoesRoupa_45
+  - first:
+      213: -4812375761566090423
+    second: botoesRoupa_46
+  - first:
+      213: -1846657057029540731
+    second: botoesRoupa_47
+  - first:
+      213: 7922792708684702420
+    second: botoesRoupa_48
+  - first:
+      213: 366804057957093092
+    second: botoesRoupa_49
+  - first:
+      213: 6196347774675880443
+    second: botoesRoupa_50
+  - first:
+      213: 6728381363291723987
+    second: botoesRoupa_51
+  - first:
+      213: 5066711480817805866
+    second: botoesRoupa_52
+  - first:
+      213: 6254882648864687613
+    second: botoesRoupa_53
+  - first:
+      213: 8945352468317889610
+    second: botoesRoupa_54
+  - first:
+      213: 4391643738329361419
+    second: botoesRoupa_55
+  - first:
+      213: -4878375047459519741
+    second: botoesRoupa_56
+  - first:
+      213: -1805268981136714116
+    second: botoesRoupa_57
+  - first:
+      213: -1485770450782928124
+    second: botoesRoupa_1
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: botoesRoupa_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1143
+        width: 535
+        height: 535
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f8ac9819490ebe50800000000000000
+      internalID: 6826904294690433267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: botoesRoupa_7
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 1143
+        width: 535
+        height: 535
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bca7866d8ba74bf0800000000000000
+      internalID: -340114623044277066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: botoesRoupa_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 569
+        width: 535
+        height: 535
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76e60a001b8349ab0800000000000000
+      internalID: -5002310953230897561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: botoesRoupa_29
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 569
+        width: 535
+        height: 535
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5f6447272efa8100800000000000000
+      internalID: 111180584939974495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: botoesRoupa_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 535
+        height: 535
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f522c7ad930c3350800000000000000
+      internalID: 5997672779409925622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: botoesRoupa_46
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 0
+        width: 535
+        height: 535
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94b372eedb1073db0800000000000000
+      internalID: -4812375761566090423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: botoesRoupa_57
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 1299
+        width: 604
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7690572d6562f6e0800000000000000
+      internalID: -1805268981136714116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: botoesRoupa_1
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 730
+        width: 441
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f3ec2dc353ae3400800000000000000
+      internalID: 305861405027656695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: botoesRoupa_2
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 141
+        width: 436
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2406e4df822a7f460800000000000000
+      internalID: 7275462019972489282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: botoesRoupa_3
+      rect:
+        serializedVersion: 2
+        x: 2125
+        y: 1383
+        width: 461
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bdfb246a2ea35e80800000000000000
+      internalID: -8191011800164336204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: botoesRoupa_4
+      rect:
+        serializedVersion: 2
+        x: 2122
+        y: 771
+        width: 363
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 227377aa5d6263bf0800000000000000
+      internalID: -345045622317435102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: botoesRoupa_5
+      rect:
+        serializedVersion: 2
+        x: 2125
+        y: 225
+        width: 465
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f9c50498c8f95a00800000000000000
+      internalID: 745900753667082738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

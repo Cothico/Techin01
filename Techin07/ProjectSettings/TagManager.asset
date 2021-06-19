@@ -5,6 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Canvas
+  - PointAce
+  - PointMor
+  - FollowPoint
+  - ObjDesacelera
+  - Moeda
+  - Mana
+  - Cogumelo
+  - Border
+  - MovingGround
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -15,7 +25,7 @@ TagManager:
   - 
   - 
   - ground
-  - 
+  - Platforms
   - 
   - 
   - 

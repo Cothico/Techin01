@@ -170,6 +170,7 @@ public class Menu : MonoBehaviour
         reponsavelScreen.SetActive(false);
         criancaScreen.SetActive(false);
         optionsScreen.SetActive(false);
+        menuAdmin.SetActive(false);
         firstTime = false;
     }
 

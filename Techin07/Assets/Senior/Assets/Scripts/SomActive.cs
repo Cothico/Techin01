@@ -37,7 +37,11 @@ public class SomActive : MonoBehaviour
             {
                 //newAudio = Instantiate(audioMoeda, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
                 //Destroy(gameObject); 
-                bla.Play();
+                if(bla != null)
+                {
+                    bla.Play();
+                }
+                
             }
         }
   

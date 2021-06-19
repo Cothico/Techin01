@@ -9,7 +9,7 @@ public class SlotData : MonoBehaviour //define qual o slot atual selecionado //o
     public string descriptionInEditor;
     public int typeInEditor = 0;
     public int rewardInEditor = 0;
-    public int activeTasks = 0; //isso não esta sendo usado. Só no save
+    public int activeTasks; //isso não esta sendo usado. Só no save
 
     //
     public int slot0type,slot1type, slot2type, slot3type, slot4type, slot5type, slot6type, slot7type;
@@ -346,6 +346,7 @@ public class SlotData : MonoBehaviour //define qual o slot atual selecionado //o
         currentSlot = 0;
         blocoTarefas.CloseTaskEditor();
         blocoTarefas.tarefasAtivas = blocoTarefas.slots.Count;
+        activeTasks = blocoTarefas.slots.Count;
         blocoTarefas.currentDescricao = "";
         SaveSystem.instance.SaveTasks();
     }

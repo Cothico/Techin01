@@ -29,24 +29,10 @@ public class SaveSystem : MonoBehaviour //Continuar adpatando //Verificando se p
 	
     void Start()
     {
-	    
+	    slotData = FindObjectOfType<SlotData>();
 	    //myTasksData = JsonUtility.FromJson<TasksData>(json);
 	    //print(PlayerPrefs.GetInt("selection",0));
 	   
-    }
-
-    void Update()
-    {
-	    if(Input.GetKeyDown(KeyCode.M))
-	    {
-	    	SaveTasks();
-	    }
-	    
-	    if(Input.GetKeyDown(KeyCode.N))
-	    {
-	    	//loadFromFile();
-	    }
-	    
     }
     
 	public void SaveTasks()
@@ -58,6 +44,7 @@ public class SaveSystem : MonoBehaviour //Continuar adpatando //Verificando se p
         file.Close();
 
         Debug.Log("Saved");
+		Debug.Log(myTasksData.myActiveTasks);
 	}
 
 	public void LoadTasks()
@@ -72,6 +59,7 @@ public class SaveSystem : MonoBehaviour //Continuar adpatando //Verificando se p
             file.Close();
 
             Debug.Log("Loaded");
+			Debug.Log(myTasksData.myActiveTasks);
         }
 	}
 

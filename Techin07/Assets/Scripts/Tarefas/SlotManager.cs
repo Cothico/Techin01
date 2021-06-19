@@ -33,7 +33,7 @@ public class SlotManager : MonoBehaviour
         thisSlotIndex = blocoTarefas.slots.IndexOf(thisSlot);
         if(blocoTarefas.isConfirming)
         {
-            UpdateSlotIcon();
+            //UpdateSlotIcon();
             blocoTarefas.isConfirming = false;
         }
     }
@@ -44,7 +44,7 @@ public class SlotManager : MonoBehaviour
          
     }
 
-    public void UpdateSlotIcon() //ao entrar menu admin, ao confirmar tarefa
+    /*public void UpdateSlotIcon() //ao entrar menu admin, ao confirmar tarefa
     {
         if(thisSlotIndex == 0)
         {
@@ -102,7 +102,7 @@ public class SlotManager : MonoBehaviour
             iconDescription.text = slotData.slot7description;
             Debug.Log("COCOCOCO  7");
         }
-    }
+    }*/
 
     public void OpenTaskEditor()
     {

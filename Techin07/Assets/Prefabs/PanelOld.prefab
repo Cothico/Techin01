@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 1593842223947519716}
   - component: {fileID: 5767766587999374670}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: PanelOld
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -374,6 +374,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisSlot: {fileID: 1593842223947519718}
+  recompensaIcon: {fileID: 1593842223593302104}
+  tipoIcon: {fileID: 1593842222960934719}
+  iconDescription: {fileID: 6660648077545556638}
+  myDescription: 
+  myType: 0
+  myReward: 0
+  myActiveTasls: 0
 --- !u!1 &5665432233747488430
 GameObject:
   m_ObjectHideFlags: 0

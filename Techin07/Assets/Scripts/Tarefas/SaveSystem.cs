@@ -1,13 +1,16 @@
-﻿using System.Collections;
+﻿using System.IO;
+using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
 public class SaveSystem : MonoBehaviour //Continuar adpatando //Verificando se precisa ser static...
 {
 	public static SaveSystem instance;
 	string json;
-	TasksData myTasksData;
+	public TasksData myTasksData;
     SlotData slotData;
+	string dataFile = "7572857242.dat";
 
 	//Coin coinRef;
 	//PlatformCount platCount;
@@ -27,35 +30,54 @@ public class SaveSystem : MonoBehaviour //Continuar adpatando //Verificando se p
     void Start()
     {
 	    
-	    myTasksData = JsonUtility.FromJson<TasksData>(json);
-	    print(PlayerPrefs.GetInt("selection",0));
+	    //myTasksData = JsonUtility.FromJson<TasksData>(json);
+	    //print(PlayerPrefs.GetInt("selection",0));
 	   
     }
 
     void Update()
     {
-	    //if (coinValue == null)
-	    //{
-	   // 	coinValue = GameObject.FindObjectOfType<GBvalues>();
-		    //saveToFile();
-	   // }
-	    
-	    
 	    if(Input.GetKeyDown(KeyCode.M))
 	    {
-	    	saveToFile();
+	    	SaveTasks();
 	    }
 	    
 	    if(Input.GetKeyDown(KeyCode.N))
 	    {
-	    	loadFromFile();
+	    	//loadFromFile();
 	    }
 	    
     }
     
+	public void SaveTasks()
+	{
+		string filePath = Application.persistentDataPath + "/" + dataFile;
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(filePath);
+        bf.Serialize(file, myTasksData);
+        file.Close();
+
+        Debug.Log("Saved");
+	}
+
+	public void LoadTasks()
+	{	
+        string filePath = Application.persistentDataPath + "/" + dataFile;
+        BinaryFormatter bf = new BinaryFormatter();
+        if(File.Exists(filePath))
+        {
+            FileStream file = File.Open(filePath, FileMode.Open);
+            TasksData loaded = (TasksData)bf.Deserialize(file);
+            myTasksData = loaded;
+            file.Close();
+
+            Debug.Log("Loaded");
+        }
+	}
+
 	void saveToFile()
 	{
-		myTasksData = new TasksData();
+		/*myTasksData = new TasksData();
 		myTasksData.rewardData0 = slotData.slot0reward;
 		myTasksData.rewardData1 = slotData.slot1reward;
 		myTasksData.rewardData2 = slotData.slot2reward;
@@ -90,10 +112,10 @@ public class SaveSystem : MonoBehaviour //Continuar adpatando //Verificando se p
 		//print(json);
 		
 		System.IO.File.WriteAllText(Application.persistentDataPath + "/save.json", json);
-		//print(Application.persistentDataPath);
+		//print(Application.persistentDataPath);*/
 	}
     
-	void loadFromFile()
+	/*void loadFromFile()
 	{
 		string jsonRead = System.IO.File.ReadAllText(Application.persistentDataPath + "/save.json");
 		myTasksData = JsonUtility.FromJson<TasksData>(jsonRead);
@@ -126,7 +148,7 @@ public class SaveSystem : MonoBehaviour //Continuar adpatando //Verificando se p
 		slotData.slot7description = myTasksData.descriptionData7;
 		
 		slotData.activeTasks = myTasksData.myActiveTasks;
-		Debug.Log(slotData.activeTasks + " actives On Load");
+		Debug.Log(slotData.activeTasks + " actives On Load");*/
 		//print("Load from File");
 		//print(mySaveData.playerCoin);
 		
@@ -135,27 +157,55 @@ public class SaveSystem : MonoBehaviour //Continuar adpatando //Verificando se p
 		
 		//platCount = GameObject.FindObjectOfType<PlatformCount>();
 		//platCount.updatePlatformCounter();
-	}
+	//}
 
-	void ClearOnLogout() //delete data
+	/*void ClearOnLogout() //delete data
 	{
 		if(System.IO.File.Exists(Application.persistentDataPath + "/save.json"))
 		{
 			System.IO.File.Delete(Application.persistentDataPath + "/save.json");
 		}
-	}	
-
-	private class TasksData //Classe com os dados salvos
+	}	*/
+	[System.Serializable]
+	public class TasksData //Classe com os dados salvos
 	{
 		public int rewardData0, rewardData1, rewardData2, rewardData3, rewardData4, rewardData5, rewardData6, rewardData7;
 		public int typeData0, typeData1, typeData2, typeData3, typeData4, typeData5, typeData6, typeData7;
         public string descriptionData0, descriptionData1, descriptionData2, descriptionData3, descriptionData4, descriptionData5, descriptionData6, descriptionData7;
 		public int myActiveTasks;
+		public TasksData(BlocoTarefas blocoTarefas)
+		{
+			rewardData0 = 0;
+			rewardData1 = 0;
+			rewardData2 = 0;
+			rewardData3 = 0;
+			rewardData4 = 0;
+			rewardData5 = 0;
+			rewardData6 = 0;
+			rewardData7 = 0;
+			typeData0 = 0;
+			typeData1 = 0;
+			typeData2 = 0;
+			typeData3 = 0;
+			typeData4 = 0;
+			typeData5 = 0;
+			typeData6 = 0;
+			typeData7 = 0;
+			descriptionData0 = "";
+			descriptionData1 = "";
+			descriptionData2 = "";
+			descriptionData3 = "";
+			descriptionData4 = "";
+			descriptionData5 = "";
+			descriptionData6 = "";
+			descriptionData7 = "";
+			myActiveTasks = 0;
+		}
 	}
 
-    private class AlreadyOpened
+    /*private class AlreadyOpened
     {
         bool firstTime;
-    }
+    }*/
     
 }

@@ -1861,10 +1861,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 40
     m_FontStyle: 2
     m_BestFit: 0
-    m_MinSize: 5
+    m_MinSize: 4
     m_MaxSize: 55
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -2015,6 +2015,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1902006755}
         m_TargetAssemblyTypeName: XPManager, Assembly-CSharp
         m_MethodName: OnGetData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2136161969}
+        m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
+        m_MethodName: LoadTasks
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3264,6 +3276,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5564,7 +5588,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &763455427
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6507,7 +6531,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &917583659
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6599,10 +6623,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
+    m_MinSize: 4
     m_MaxSize: 55
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -8791,7 +8815,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1338460711}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.37965617
+  m_Size: 0.37965614
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9109,6 +9133,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1902006755}
         m_TargetAssemblyTypeName: XPManager, Assembly-CSharp
         m_MethodName: OnGetData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2136161969}
+        m_TargetAssemblyTypeName: SaveSystem, Assembly-CSharp
+        m_MethodName: LoadTasks
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9607,7 +9643,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1306332028
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9944,8 +9980,8 @@ RectTransform:
   m_Father: {fileID: 633853551}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.6203438}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -12905,7 +12941,7 @@ MonoBehaviour:
   signScreen: {fileID: 917583658}
   tutorial02: {fileID: 68013854}
   menuAdmin: {fileID: 763455426}
-  firstTime: 1
+  firstTime: 0
   inputPassWord: {fileID: 1949950108}
   password: s
 --- !u!4 &1902006754
@@ -12974,6 +13010,7 @@ MonoBehaviour:
   xpAmount: 0
   currentTipo: 0
   currentDescricao: 
+  isConfirming: 0
 --- !u!114 &1902006757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14361,6 +14398,75 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Level: 0'
+--- !u!1 &2136161968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2136161970}
+  - component: {fileID: 2136161969}
+  m_Layer: 0
+  m_Name: SaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2136161969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136161968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5204f4a554a85249afebec85dda6b1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTasksData:
+    rewardData0: 0
+    rewardData1: 0
+    rewardData2: 0
+    rewardData3: 0
+    rewardData4: 0
+    rewardData5: 0
+    rewardData6: 0
+    rewardData7: 0
+    typeData0: 0
+    typeData1: 0
+    typeData2: 0
+    typeData3: 0
+    typeData4: 0
+    typeData5: 0
+    typeData6: 0
+    typeData7: 0
+    descriptionData0: 
+    descriptionData1: 
+    descriptionData2: 
+    descriptionData3: 
+    descriptionData4: 
+    descriptionData5: 
+    descriptionData6: 
+    descriptionData7: 
+    myActiveTasks: 0
+--- !u!4 &2136161970
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136161968}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 519.9188, y: 935.3979, z: -2930.149}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2146455063
 GameObject:
   m_ObjectHideFlags: 0

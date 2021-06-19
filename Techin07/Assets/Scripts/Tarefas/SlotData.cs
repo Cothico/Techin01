@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -347,6 +347,7 @@ public class SlotData : MonoBehaviour //define qual o slot atual selecionado //o
         blocoTarefas.CloseTaskEditor();
         blocoTarefas.tarefasAtivas = blocoTarefas.slots.Count;
         blocoTarefas.currentDescricao = "";
+        SaveSystem.instance.SaveTasks();
     }
 
     /*public void Description()

@@ -10,6 +10,7 @@ public class Menu : MonoBehaviour
     public GameObject /*5*/mainScreen, reponsavelScreen, criancaScreen, optionsScreen, /*0*/inicioScreen, /*1*/tutorial01, /*3*/loginScreen, /*4*/signScreen, /*2*/tutorial02, /*6*/menuAdmin;
     public bool firstTime = true;
     XPManager xPM;
+    BlocoTarefas blocoTarefas;
     public InputField inputPassWord;
     public string password;
     User user = new User();
@@ -17,6 +18,7 @@ public class Menu : MonoBehaviour
 
     private void Awake() {
         xPM = GameObject.Find("portadorDoScript").GetComponent<XPManager>();
+        blocoTarefas = FindObjectOfType<BlocoTarefas>();
     }
 
     void Start()
@@ -183,8 +185,10 @@ public class Menu : MonoBehaviour
     {
         if(inputPassWord.text == password)
         {
+            inputPassWord.text = "";
             reponsavelScreen.SetActive(false);
             menuAdmin.SetActive(true);
+            blocoTarefas.UpdateTasks();
         }
     }
     public void GoToCriancaScreen()

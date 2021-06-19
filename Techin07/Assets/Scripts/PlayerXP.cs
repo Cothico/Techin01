@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,18 +17,9 @@ public class PlayerXP : MonoBehaviour
     int xpHab;
     int levelMultiplier = 21; //xpToUp = level * levelMultiplier + baseXpToUp
 
-
-
-    // Start is called before the first frame update
     void Start()
     {
         blocoTarefas = FindObjectOfType<BlocoTarefas>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void AddXP(int amount, int type)
@@ -75,7 +66,7 @@ public class PlayerXP : MonoBehaviour
         }
     }
 
-    public void ConcluirTarefa()
+    public void ConcluirTarefa() //save
     {
         if(blocoTarefas.currentRecompensa != 0 || blocoTarefas.currentTipo != 0)
         {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Camera : MonoBehaviour
 {
     public Rigidbody2D rb;
-    private float scrollSpeed = 2f;
+    //private float scrollSpeed = 2f;
     public float Speed;
     // Start is called before the first frame update
     void Start()

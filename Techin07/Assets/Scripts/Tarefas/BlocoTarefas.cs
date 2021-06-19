@@ -10,6 +10,7 @@ public class BlocoTarefas : MonoBehaviour //Meu //interações no menu de tarefa
     public GameObject prefabTarefa;
     Image recompensa;
     Image tipo;
+    
     SlotData slotData;
 
     //
@@ -28,15 +29,17 @@ public class BlocoTarefas : MonoBehaviour //Meu //interações no menu de tarefa
     public int xpAmount;
     public int currentTipo;
     public string currentDescricao;
+    public bool isConfirming = false;
+    
 
 
     private void Awake() {
         recompensa = botaoRecompensa.GetComponent<Image>();
         tipo = botaoTipo.GetComponent<Image>();
+        slotData = FindObjectOfType<SlotData>();
     }
     void Start()
     {
-        slotData = FindObjectOfType<SlotData>();
         recompensa.sprite = recompensas[0];
         tipo.sprite = tipos[0];
         painelRecompensa.SetActive(false);
@@ -187,7 +190,7 @@ public class BlocoTarefas : MonoBehaviour //Meu //interações no menu de tarefa
         editorTabela.SetActive(false);
     }
 
-    public void OpeningTaskEditor()
+    public void OpeningTaskEditor() 
     {
         tipo.sprite = tipos[slotData.typeInEditor];
         recompensa.sprite = recompensas[slotData.rewardInEditor];
@@ -197,7 +200,7 @@ public class BlocoTarefas : MonoBehaviour //Meu //interações no menu de tarefa
         //Debug.Log(slotData.currentSlot + "cur slot");
     }
 
-    public void confirmTaskEdition()
+    public void confirmTaskEdition() //save
     {
         currentDescricao = descricao.text;
         if(slotData.currentSlot == 0)
@@ -205,53 +208,78 @@ public class BlocoTarefas : MonoBehaviour //Meu //interações no menu de tarefa
             slotData.slot0type = currentTipo;
             slotData.slot0reward = currentRecompensa;
             slotData.slot0description = currentDescricao;
+            SlotManager sm0 = slots[0].GetComponent<SlotManager>();
+            sm0.tipoIcon.sprite = tipos[slotData.slot0type];
+            sm0.recompensaIcon.sprite = recompensas[slotData.slot0reward];
         }
         if(slotData.currentSlot == 1)
         {
             slotData.slot1type = currentTipo;
             slotData.slot1reward = currentRecompensa;
             slotData.slot1description = currentDescricao;
+            SlotManager sm1 = slots[1].GetComponent<SlotManager>();
+            sm1.tipoIcon.sprite = tipos[slotData.slot1type];
+            sm1.recompensaIcon.sprite = recompensas[slotData.slot1reward];
         }
         if(slotData.currentSlot == 2)
         {
             slotData.slot2type = currentTipo;
             slotData.slot2reward = currentRecompensa;
             slotData.slot2description = currentDescricao;
+            SlotManager sm2 = slots[1].GetComponent<SlotManager>();
+            sm2.tipoIcon.sprite = tipos[slotData.slot2type];
+            sm2.recompensaIcon.sprite = recompensas[slotData.slot2reward];
         }
         if(slotData.currentSlot == 3)
         {
             slotData.slot3type = currentTipo;
             slotData.slot3reward = currentRecompensa;
             slotData.slot3description = currentDescricao;
+            SlotManager sm3 = slots[3].GetComponent<SlotManager>();
+            sm3.tipoIcon.sprite = tipos[slotData.slot3type];
+            sm3.recompensaIcon.sprite = recompensas[slotData.slot3reward];
         }
         if(slotData.currentSlot == 4)
         {
             slotData.slot4type = currentTipo;
             slotData.slot4reward = currentRecompensa;
             slotData.slot4description = currentDescricao;
+            SlotManager sm4 = slots[4].GetComponent<SlotManager>();
+            sm4.tipoIcon.sprite = tipos[slotData.slot4type];
+            sm4.recompensaIcon.sprite = recompensas[slotData.slot4reward];
         }
         if(slotData.currentSlot == 5)
         {
             slotData.slot5type = currentTipo;
             slotData.slot5reward = currentRecompensa;
             slotData.slot5description = currentDescricao;
+            SlotManager sm5 = slots[5].GetComponent<SlotManager>();
+            sm5.tipoIcon.sprite = tipos[slotData.slot5type];
+            sm5.recompensaIcon.sprite = recompensas[slotData.slot5reward];
         }
         if(slotData.currentSlot == 6)
         {
             slotData.slot6type = currentTipo;
             slotData.slot6reward = currentRecompensa;
             slotData.slot6description = currentDescricao;
+            SlotManager sm6 = slots[6].GetComponent<SlotManager>();
+            sm6.tipoIcon.sprite = tipos[slotData.slot6type];
+            sm6.recompensaIcon.sprite = recompensas[slotData.slot6reward];
         }
         if(slotData.currentSlot == 7)
         {
             slotData.slot7type = currentTipo;
             slotData.slot7reward = currentRecompensa;
             slotData.slot7description = currentDescricao;
+            SlotManager sm7 = slots[7].GetComponent<SlotManager>();
+            sm7.tipoIcon.sprite = tipos[slotData.slot7type];
+            sm7.recompensaIcon.sprite = recompensas[slotData.slot7reward];
         }
         
         editorTabela.SetActive(false);
         //descricao.text = "";
-        UpdateTaskData();
+        //UpdateTaskData();
+        //isConfirming = true;
         //Debug.Log(currentDescricao + currentRecompensa + currentTipo+ " current things");
         //UpdateTasks
     }
@@ -339,6 +367,298 @@ public class BlocoTarefas : MonoBehaviour //Meu //interações no menu de tarefa
             //Debug.Log(slotData.currentSlot + "cur slot");
         }
         
+    }
+    
+    public void UpdateTasks() //ao entrar no menu admin
+    {
+        if(slotData.activeTasks == 0)
+        {
+
+        }
+        if(slotData.activeTasks == 1)
+        {
+            CreateNewTask();
+        }
+        if(slotData.activeTasks == 2)
+        {
+            CreateNewTask();
+            CreateNewTask();
+        }
+        if(slotData.activeTasks == 3)
+        {
+            CreateNewTask();
+            CreateNewTask();
+            CreateNewTask();
+        }
+        if(slotData.activeTasks == 4)
+        {
+            CreateNewTask();
+            CreateNewTask();
+            CreateNewTask();
+            CreateNewTask();
+        }
+        if(slotData.activeTasks == 5)
+        {
+            CreateNewTask();
+            CreateNewTask();
+            CreateNewTask();
+            CreateNewTask();
+            CreateNewTask();
+        }
+        if(slotData.activeTasks == 6)
+        {
+            CreateNewTask();
+            CreateNewTask();
+            CreateNewTask();
+            CreateNewTask();
+            CreateNewTask();
+            CreateNewTask();
+        }
+        if(slotData.activeTasks == 7)
+        {
+            CreateNewTask();
+            CreateNewTask();
+            CreateNewTask();
+            CreateNewTask();
+            CreateNewTask();
+            CreateNewTask();
+            CreateNewTask();
+        }
+
+    }
+
+    public void ClearTasks()// ao sair do menu admin
+    {
+        if(tarefasAtivas == 0)
+        {
+
+        }
+        if(tarefasAtivas == 1)
+        {
+            slotData.slot0type = 0;
+            slotData.slot1reward = 0;
+            slotData.slot0description = "";
+            Destroy(slots[0]);
+        }
+        if(tarefasAtivas == 2)
+        {
+            slotData.slot0type = 0;
+            slotData.slot0reward = 0;
+            slotData.slot0description = "";
+            Destroy(slots[0]);
+            slotData.slot1type = 0;
+            slotData.slot1reward = 0;
+            slotData.slot1description = "";
+            Destroy(slots[1]);
+        }
+        if(tarefasAtivas == 3)
+        {
+            slotData.slot0type = 0;
+            slotData.slot0reward = 0;
+            slotData.slot0description = "";
+            Destroy(slots[0]);
+            slotData.slot1type = 0;
+            slotData.slot1reward = 0;
+            slotData.slot1description = "";
+            Destroy(slots[1]);
+            slotData.slot2type = 0;
+            slotData.slot2reward = 0;
+            slotData.slot2description = "";
+            Destroy(slots[2]);
+        }
+        if(tarefasAtivas == 4)
+        {
+            slotData.slot0type = 0;
+            slotData.slot0reward = 0;
+            slotData.slot0description = "";
+            Destroy(slots[0]);
+            slotData.slot1type = 0;
+            slotData.slot1reward = 0;
+            slotData.slot1description = "";
+            Destroy(slots[1]);
+            slotData.slot2type = 0;
+            slotData.slot2reward = 0;
+            slotData.slot2description = "";
+            Destroy(slots[2]);
+            slotData.slot3type = 0;
+            slotData.slot3reward = 0;
+            slotData.slot3description = "";
+            Destroy(slots[3]);
+        }
+        if(tarefasAtivas == 5)
+        {
+            slotData.slot0type = 0;
+            slotData.slot0reward = 0;
+            slotData.slot0description = "";
+            Destroy(slots[0]);
+            slotData.slot1type = 0;
+            slotData.slot1reward = 0;
+            slotData.slot1description = "";
+            Destroy(slots[1]);
+            slotData.slot2type = 0;
+            slotData.slot2reward = 0;
+            slotData.slot2description = "";
+            Destroy(slots[2]);
+            slotData.slot3type = 0;
+            slotData.slot3reward = 0;
+            slotData.slot3description = "";
+            Destroy(slots[3]);
+            slotData.slot4type = 0;
+            slotData.slot4reward = 0;
+            slotData.slot4description = "";
+            Destroy(slots[4]);
+        }
+        if(tarefasAtivas == 6)
+        {
+            slotData.slot0type = 0;
+            slotData.slot0reward = 0;
+            slotData.slot0description = "";
+            Destroy(slots[0]);
+            slotData.slot1type = 0;
+            slotData.slot1reward = 0;
+            slotData.slot1description = "";
+            Destroy(slots[1]);
+            slotData.slot2type = 0;
+            slotData.slot2reward = 0;
+            slotData.slot2description = "";
+            Destroy(slots[2]);
+            slotData.slot3type = 0;
+            slotData.slot3reward = 0;
+            slotData.slot3description = "";
+            Destroy(slots[3]);
+            slotData.slot4type = 0;
+            slotData.slot4reward = 0;
+            slotData.slot4description = "";
+            Destroy(slots[5]);
+            slotData.slot5type = 0;
+            slotData.slot5reward = 0;
+            slotData.slot5description = "";
+            Destroy(slots[5]);
+        }
+        if(tarefasAtivas == 7)
+        {
+            slotData.slot0type = 0;
+            slotData.slot0reward = 0;
+            slotData.slot0description = "";
+            Destroy(slots[0]);
+            slotData.slot1type = 0;
+            slotData.slot1reward = 0;
+            slotData.slot1description = "";
+            Destroy(slots[1]);
+            slotData.slot2type = 0;
+            slotData.slot2reward = 0;
+            slotData.slot2description = "";
+            Destroy(slots[2]);
+            slotData.slot3type = 0;
+            slotData.slot3reward = 0;
+            slotData.slot3description = "";
+            Destroy(slots[3]);
+            slotData.slot4type = 0;
+            slotData.slot4reward = 0;
+            slotData.slot4description = "";
+            Destroy(slots[5]);
+            slotData.slot5type = 0;
+            slotData.slot5reward = 0;
+            slotData.slot5description = "";
+            Destroy(slots[6]);
+            slotData.slot6type = 0;
+            slotData.slot6reward = 0;
+            slotData.slot6description = "";
+            Destroy(slots[6]);
+        }
+        if(tarefasAtivas == 8)
+        {
+            slotData.slot0type = 0;
+            slotData.slot0reward = 0;
+            slotData.slot0description = "";
+            Destroy(slots[0]);
+            slotData.slot1type = 0;
+            slotData.slot1reward = 0;
+            slotData.slot1description = "";
+            Destroy(slots[1]);
+            slotData.slot2type = 0;
+            slotData.slot2reward = 0;
+            slotData.slot2description = "";
+            Destroy(slots[2]);
+            slotData.slot3type = 0;
+            slotData.slot3reward = 0;
+            slotData.slot3description = "";
+            Destroy(slots[3]);
+            slotData.slot4type = 0;
+            slotData.slot4reward = 0;
+            slotData.slot4description = "";
+            Destroy(slots[5]);
+            slotData.slot5type = 0;
+            slotData.slot5reward = 0;
+            slotData.slot5description = "";
+            Destroy(slots[6]);
+            slotData.slot6type = 0;
+            slotData.slot6reward = 0;
+            slotData.slot6description = "";
+            Destroy(slots[7]);
+            slotData.slot7type = 0;
+            slotData.slot7reward = 0;
+            slotData.slot7description = "";
+            Destroy(slots[7]);
+        }
+    }
+
+    public void SavePlayer()
+    {
+        SaveSystem.instance.myTasksData.rewardData0 = slotData.slot0reward;
+        SaveSystem.instance.myTasksData.rewardData1 = slotData.slot1reward;
+        SaveSystem.instance.myTasksData.rewardData2 = slotData.slot2reward;
+        SaveSystem.instance.myTasksData.rewardData3 = slotData.slot3reward;
+        SaveSystem.instance.myTasksData.rewardData4 = slotData.slot4reward;
+        SaveSystem.instance.myTasksData.rewardData5 = slotData.slot5reward;
+        SaveSystem.instance.myTasksData.rewardData6 = slotData.slot6reward;
+        SaveSystem.instance.myTasksData.rewardData7 = slotData.slot7reward;
+        SaveSystem.instance.myTasksData.typeData0 = slotData.slot0type;
+        SaveSystem.instance.myTasksData.typeData1 = slotData.slot1type;
+        SaveSystem.instance.myTasksData.typeData2 = slotData.slot2type;
+        SaveSystem.instance.myTasksData.typeData3 = slotData.slot3type;
+        SaveSystem.instance.myTasksData.typeData4 = slotData.slot4type;
+        SaveSystem.instance.myTasksData.typeData5 = slotData.slot5type;
+        SaveSystem.instance.myTasksData.typeData6 = slotData.slot6type;
+        SaveSystem.instance.myTasksData.typeData7 = slotData.slot7type;
+        SaveSystem.instance.myTasksData.descriptionData0 = slotData.slot0description;
+        SaveSystem.instance.myTasksData.descriptionData1 = slotData.slot1description;
+        SaveSystem.instance.myTasksData.descriptionData2 = slotData.slot2description;
+        SaveSystem.instance.myTasksData.descriptionData3 = slotData.slot3description;
+        SaveSystem.instance.myTasksData.descriptionData4 = slotData.slot4description;
+        SaveSystem.instance.myTasksData.descriptionData5 = slotData.slot5description;
+        SaveSystem.instance.myTasksData.descriptionData6 = slotData.slot6description;
+        SaveSystem.instance.myTasksData.descriptionData7 = slotData.slot7description;
+        SaveSystem.instance.SaveTasks();
+    }
+
+    public void LoadPlayer()
+    {
+        SaveSystem.instance.LoadTasks();
+        slotData.slot0reward = SaveSystem.instance.myTasksData.rewardData0;
+        slotData.slot1reward = SaveSystem.instance.myTasksData.rewardData1;
+        slotData.slot2reward = SaveSystem.instance.myTasksData.rewardData2;
+        slotData.slot3reward = SaveSystem.instance.myTasksData.rewardData3;
+        slotData.slot4reward = SaveSystem.instance.myTasksData.rewardData4;
+        slotData.slot5reward = SaveSystem.instance.myTasksData.rewardData5;
+        slotData.slot6reward = SaveSystem.instance.myTasksData.rewardData6;
+        slotData.slot7reward = SaveSystem.instance.myTasksData.rewardData7;
+        slotData.slot0type = SaveSystem.instance.myTasksData.typeData0;
+        slotData.slot1type = SaveSystem.instance.myTasksData.typeData1;
+        slotData.slot2type = SaveSystem.instance.myTasksData.typeData2;
+        slotData.slot3type = SaveSystem.instance.myTasksData.typeData3;
+        slotData.slot4type = SaveSystem.instance.myTasksData.typeData4;
+        slotData.slot5type = SaveSystem.instance.myTasksData.typeData5;
+        slotData.slot6type = SaveSystem.instance.myTasksData.typeData6;
+        slotData.slot7type = SaveSystem.instance.myTasksData.typeData7;
+        slotData.slot0description = SaveSystem.instance.myTasksData.descriptionData0;
+        slotData.slot1description = SaveSystem.instance.myTasksData.descriptionData1;
+        slotData.slot2description = SaveSystem.instance.myTasksData.descriptionData2;
+        slotData.slot3description = SaveSystem.instance.myTasksData.descriptionData3;
+        slotData.slot4description = SaveSystem.instance.myTasksData.descriptionData4;
+        slotData.slot5description = SaveSystem.instance.myTasksData.descriptionData5;
+        slotData.slot6description = SaveSystem.instance.myTasksData.descriptionData6;
+        slotData.slot7description = SaveSystem.instance.myTasksData.descriptionData7;
     }
 
     /*public void DeleteTask()

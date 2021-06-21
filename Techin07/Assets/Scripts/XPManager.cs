@@ -28,7 +28,7 @@ public class XPManager : MonoBehaviour //Por enquanto 02/06 11:47 não estou usa
     public static int totalLevel;
 
     //public string password;
-    public GameObject menuScreen;
+    //public GameObject menuScreen;
 
     private void Awake() {
         //playerXP = FindObjectOfType<PlayerXP>();
@@ -115,7 +115,7 @@ public class XPManager : MonoBehaviour //Por enquanto 02/06 11:47 não estou usa
         {
             user = response;
             UpdateLevel();
-            //Debug.Log(user.userLevel);
+            Debug.Log(PlayerXP.levelFor);
             //Debug.Log(user.userName);
         });
     }

@@ -255,7 +255,7 @@ public class Menu : MonoBehaviour
         reponsavelScreen.SetActive(true);
         criancaScreen.SetActive(true);
         optionsScreen.SetActive(false);*/
-        SceneManager.LoadScene("Sc");
+        SceneManager.LoadScene("SkinSelect");
     }
     public void GoToOptions()
     {

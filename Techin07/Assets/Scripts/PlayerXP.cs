@@ -162,10 +162,10 @@ public class PlayerXP : MonoBehaviour
             XPManager.carXp = xpCar;
             XPManager.habXp = xpHab;*/
             //blocoTarefas.SavePlayer();
-            User user = new User();
+            /*User user = new User();
             Debug.Log(user.userForXp);
             Debug.Log(xpInt + "Int XP");
-            Debug.Log(levelInt + "Int level");
+            Debug.Log(levelInt + "Int level");*/
             //xPManager.Po(); aki <<--- **
         }
         

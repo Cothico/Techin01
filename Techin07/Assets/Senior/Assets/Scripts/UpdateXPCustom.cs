@@ -13,6 +13,7 @@ public class UpdateXPCustom : MonoBehaviour
     Check check;
     public bool isGame;
     public GameObject loading;
+    public GameObject menuAdmin;
     User user = new User();
     // Start is called before the first frame update
 
@@ -26,6 +27,7 @@ public class UpdateXPCustom : MonoBehaviour
         if(!isGame)
         {
             loading.SetActive(true);
+            menuAdmin.SetActive(false);
             Debug.Log("é falso mesmo");
             StartCoroutine(UpdateLevels());
         }
@@ -58,5 +60,20 @@ public class UpdateXPCustom : MonoBehaviour
     public void PlayGame01()
     {
         SceneManager.LoadScene("Cavalo");
+    }
+
+    public void BackMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void OpenTarefas()
+    {
+        menuAdmin.SetActive(true);
+    }
+
+    public void CloseTarefas()
+    {
+        menuAdmin.SetActive(false);
     }
 }

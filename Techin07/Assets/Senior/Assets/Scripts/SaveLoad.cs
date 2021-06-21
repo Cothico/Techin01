@@ -29,8 +29,7 @@ public class SaveLoad : MonoBehaviour
     }
     void Start()
     {
-        PlayerLoad();
-        UpdateSkins();
+        
     }
 
     // Update is called once per frame
@@ -60,7 +59,8 @@ public class SaveLoad : MonoBehaviour
     public IEnumerator TavaNoStart()
     {
         yield return new WaitForSeconds(0.1f);
-        
+        PlayerLoad();
+        UpdateSkins();
         
     }
 

@@ -25,6 +25,13 @@ public class Moviment : MonoBehaviour
     /// <summary>
     /// 
     /// </summary>
+    /// 
+
+    public float aceleraHabilidade;
+    public float lamaHabilidade;
+
+    public int atr_Habilidade;
+
 
     public float Speed;
     public float JumpForce;
@@ -106,8 +113,13 @@ public class Moviment : MonoBehaviour
     {
         if (collision.CompareTag("PointAce") == true)
         {
-            //Debug.Log("Acelerou");
-            Speed = 3;
+            float flotando = atr_Habilidade;
+            aceleraHabilidade = flotando / 5f;
+            Speed = 2.2f + aceleraHabilidade;
+
+
+            //AtrazoCavalo();
+
         }
         
         if (collision.CompareTag("FollowPoint") == true)
@@ -124,8 +136,26 @@ public class Moviment : MonoBehaviour
         if(collision.CompareTag("ObjDesacelera") == true)
         {
             //Debug.Log("Desacelerou");
+
+            //DESACELERAR MAIS LENTO (HABILIDADE)
+            /*float habilidade = atr_Habilidade;
+            lamaHabilidade = habilidade / 5f;
+            Speed = 1 - lamaHabilidade;*/
+
             Speed = 1;
         }
+        /*else
+        {
+            float flotando = atr_Habilidade;
+            aceleraHabilidade = flotando / 5f;
+            Speed = 2.2f + aceleraHabilidade;
+        }*/
+    }
+
+    IEnumerable AtrazoCavalo()
+    {
+        yield return new WaitForSeconds(0.1f);
+        Speed = 3;
     }
 
     /*public void PlayerLoad()

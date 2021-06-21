@@ -12,16 +12,20 @@ public class ManaC : MonoBehaviour
     [SerializeField] TextMeshProUGUI m_Object;
     public static int manaAcess;
     public int mana;
-    //public int manaMostrar;
+
+    /// ATRIBUTO INTELIGENCIA USO:
+    public int inteligencia;
+
 
     //BAR
-    public int maxMana = 3;
+    public int maxMana = 30;
     public int currentMana;
     public ManaBAr manaBar;
 
     // Start is called before the first frame update
     void Start()
     {
+        maxMana = 30;
         //TEXT
         mana = 0;
 
@@ -40,14 +44,14 @@ public class ManaC : MonoBehaviour
     {
         m_Object.text = mana.ToString();
         manaBar.SetHealth(mana);
-        manaAcess = mana;
+        //manaAcess = mana;
         //mana = manaAcess;
         //manaMostrar = manaAcess;
         //checkAcess = AnimationsC.nroPulosAcess;
-        if(AnimationsC.segundoPulo == true)
+        /*if(AnimationsC.segundoPulo == true)
         {
             mana = 0;
-        }
+        }*/
 
 
     }
@@ -57,19 +61,27 @@ public class ManaC : MonoBehaviour
         if (col.CompareTag("Mana") == true)
         {
             //TEXT
-            mana = mana + 1;
-
+            mana += 5 + (inteligencia * 2) ;
+            if(mana > 30)
+            {
+                mana = 30;
+            }
             //BAR
             //currentMana += 1;
             //manaBar.SetHealth(currentMana);
             manaBar.SetHealth(mana);
             //TakeMana(1);
-            Destroy(col.gameObject);
+
+            //Destroy(col.gameObject);
         }
 
         if(col.CompareTag("Cogumelo") == true && mana >= 1)
         {
-            mana = mana - 1;
+            mana -= 10;
+            if(mana < 0)
+            {
+                mana = 0;
+            }
         }
     }
 

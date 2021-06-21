@@ -12,7 +12,7 @@ public class SomActive : MonoBehaviour
     AudioSource bla;
     private void Start()
     {
-        bla = GameObject.Find("SomPedra").GetComponent<AudioSource>();
+        //bla = GameObject.Find("SomPedra").GetComponent<AudioSource>();
     }
 
     public void OnTriggerEnter2D(Collider2D col)
@@ -25,7 +25,7 @@ public class SomActive : MonoBehaviour
         }
     }
 
-    public void OnCollisionEnter2D(Collision2D col)
+   /* public void OnCollisionEnter2D(Collision2D col)
     {
         if (isMadera)
         {
@@ -58,6 +58,6 @@ public class SomActive : MonoBehaviour
         }        
         //newAudio = GetComponent<AudioSource>().loop(false);
         //Destroy(newAudio.gameObject);
-    }
+    }*/
 
 }

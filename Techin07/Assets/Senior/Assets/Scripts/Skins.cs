@@ -116,7 +116,6 @@ public class Skins : MonoBehaviour
         {
             quantCamisa = SaveSkinLoad.instance.pData.tenis;
         }
-        Debug.Log("Start skins");
     }
     //CABELO
     public void isRuivo()

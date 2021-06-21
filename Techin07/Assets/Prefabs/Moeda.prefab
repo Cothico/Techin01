@@ -73,9 +73,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 5299788333793493197, guid: da7e83c2bd828e448935a053861e375e,
-    type: 3}
+  m_SortingOrder: 15
+  m_Sprite: {fileID: 5299788333793493197, guid: da7e83c2bd828e448935a053861e375e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -133,5 +132,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b000d6c2a0045248ab410fdc41bc1e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMoeda: {fileID: 2768589104008406402, guid: b44c7eb6e93877f47b10d67ed1db12d7,
-    type: 3}
+  isMadera: 0
+  audioMoeda: {fileID: 2768589104008406402, guid: b44c7eb6e93877f47b10d67ed1db12d7, type: 3}
+  newAudio: {fileID: 0}

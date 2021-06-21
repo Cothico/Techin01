@@ -52,8 +52,6 @@ public class SaveSkinLoad : MonoBehaviour
             PData loaded = (PData)bf.Deserialize(file);
             pData = loaded;
             file.Close();
-
-            Debug.Log("Loaded");
         }
     }
 }

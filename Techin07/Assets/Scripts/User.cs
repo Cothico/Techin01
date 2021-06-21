@@ -14,19 +14,21 @@ public class User
     public int userIntXp;
     public int userCarXp;
     public int userHabXp;
-    public string userName;
+    public int userLevel;
+    //public string userName;
 
     public User()
     {
-        userForLevel = XPManager.forLevel;
-        userForXp = XPManager.forXp;
-        userIntLevel = XPManager.intLevel;
-        userIntXp = XPManager.intXp;
-        userCarLevel = XPManager.carLevel;
-        userCarXp = XPManager.carXp;
-        userHabLevel = XPManager.habLevel;
-        userHabXp = XPManager.habXp;
-        userName = XPManager.playerName;
+        userForLevel = PlayerXP.levelFor;
+        userForXp = PlayerXP.xpFor;
+        userIntLevel = PlayerXP.levelInt;
+        userIntXp = PlayerXP.xpInt;
+        userCarLevel = PlayerXP.levelCar;
+        userCarXp = PlayerXP.xpCar;
+        userHabLevel = PlayerXP.levelHab;
+        userHabXp = PlayerXP.xpHab;
+        userLevel = XPManager.totalLevel;
+        //userName = XPManager.playerName;
         //Só é possível pegar os dados em tempo real de uma classe sem monobehaviour ou static a partir de outra classe;
     }
 }

@@ -348,7 +348,7 @@ public class SlotData : MonoBehaviour //define qual o slot atual selecionado //o
         blocoTarefas.tarefasAtivas = blocoTarefas.slots.Count;
         activeTasks = blocoTarefas.slots.Count;
         blocoTarefas.currentDescricao = "";
-        SaveSystem.instance.SaveTasks();
+        blocoTarefas.SavePlayer();
     }
 
     /*public void Description()

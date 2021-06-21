@@ -11,6 +11,7 @@ public class SaveSystem : MonoBehaviour //Continuar adpatando //Verificando se p
 	public TasksData myTasksData;
     SlotData slotData;
 	string dataFile = "7572857242.dat";
+	
 
 	//Coin coinRef;
 	//PlatformCount platCount;
@@ -34,6 +35,13 @@ public class SaveSystem : MonoBehaviour //Continuar adpatando //Verificando se p
 	    //print(PlayerPrefs.GetInt("selection",0));
 	   
     }
+
+	/*private void Update() {
+		if(Input.GetKeyDown(KeyCode.Z))
+		{
+			Delete();
+		}
+	}*/
     
 	public void SaveTasks()
 	{
@@ -63,97 +71,18 @@ public class SaveSystem : MonoBehaviour //Continuar adpatando //Verificando se p
         }
 	}
 
-	void saveToFile()
-	{
-		/*myTasksData = new TasksData();
-		myTasksData.rewardData0 = slotData.slot0reward;
-		myTasksData.rewardData1 = slotData.slot1reward;
-		myTasksData.rewardData2 = slotData.slot2reward;
-		myTasksData.rewardData3 = slotData.slot3reward;
-		myTasksData.rewardData4 = slotData.slot4reward;
-		myTasksData.rewardData5 = slotData.slot5reward;
-		myTasksData.rewardData6 = slotData.slot6reward;
-		myTasksData.rewardData7 = slotData.slot7reward;
-		
-		myTasksData.typeData0 = slotData.slot0type;
-		myTasksData.typeData1 = slotData.slot1type;
-		myTasksData.typeData2 = slotData.slot2type;
-		myTasksData.typeData3 = slotData.slot3type;
-		myTasksData.typeData4 = slotData.slot4type;
-		myTasksData.typeData5 = slotData.slot5type;
-		myTasksData.typeData6 = slotData.slot6type;
-		myTasksData.typeData7 = slotData.slot7type;
+	/*public void Delete()
+    {
+        string filePath = Application.persistentDataPath + "/" + dataFile;
+        BinaryFormatter bf = new BinaryFormatter();
+        if(System.IO.File.Exists(filePath))
+        {
+            File.Delete(filePath);
+        }
+    }*/
 
-		myTasksData.descriptionData0 = slotData.slot0description;
-		myTasksData.descriptionData1 = slotData.slot1description;
-		myTasksData.descriptionData2 = slotData.slot2description;
-		myTasksData.descriptionData3 = slotData.slot3description;
-		myTasksData.descriptionData4 = slotData.slot4description;
-		myTasksData.descriptionData5 = slotData.slot5description;
-		myTasksData.descriptionData6 = slotData.slot6description;
-		myTasksData.descriptionData7 = slotData.slot7description;
+	
 
-		myTasksData.myActiveTasks = slotData.activeTasks;
-		Debug.Log(myTasksData + " actives On Save");
-		
-		json = JsonUtility.ToJson(myTasksData);
-		//print(json);
-		
-		System.IO.File.WriteAllText(Application.persistentDataPath + "/save.json", json);
-		//print(Application.persistentDataPath);*/
-	}
-    
-	/*void loadFromFile()
-	{
-		string jsonRead = System.IO.File.ReadAllText(Application.persistentDataPath + "/save.json");
-		myTasksData = JsonUtility.FromJson<TasksData>(jsonRead);
-		
-		slotData.slot0reward = myTasksData.rewardData0;
-		slotData.slot1reward = myTasksData.rewardData1;
-		slotData.slot2reward = myTasksData.rewardData2;
-		slotData.slot3reward = myTasksData.rewardData3;
-		slotData.slot4reward = myTasksData.rewardData4;
-		slotData.slot5reward = myTasksData.rewardData5;
-		slotData.slot6reward = myTasksData.rewardData6;
-		slotData.slot7reward = myTasksData.rewardData7;
-
-		slotData.slot0type = myTasksData.typeData0;
-		slotData.slot1type = myTasksData.typeData1;
-		slotData.slot2type = myTasksData.typeData2;
-		slotData.slot3type = myTasksData.typeData3;
-		slotData.slot4type = myTasksData.typeData4;
-		slotData.slot5type = myTasksData.typeData5;
-		slotData.slot6type = myTasksData.typeData6;
-		slotData.slot7type = myTasksData.typeData7;
-
-		slotData.slot0description = myTasksData.descriptionData0;
-		slotData.slot1description = myTasksData.descriptionData1;
-		slotData.slot2description = myTasksData.descriptionData2;
-		slotData.slot3description = myTasksData.descriptionData3;
-		slotData.slot4description = myTasksData.descriptionData4;
-		slotData.slot5description = myTasksData.descriptionData5;
-		slotData.slot6description = myTasksData.descriptionData6;
-		slotData.slot7description = myTasksData.descriptionData7;
-		
-		slotData.activeTasks = myTasksData.myActiveTasks;
-		Debug.Log(slotData.activeTasks + " actives On Load");*/
-		//print("Load from File");
-		//print(mySaveData.playerCoin);
-		
-		//coinRef = GameObject.FindObjectOfType<Coin>();
-		//coinRef.updateCoinCounter();
-		
-		//platCount = GameObject.FindObjectOfType<PlatformCount>();
-		//platCount.updatePlatformCounter();
-	//}
-
-	/*void ClearOnLogout() //delete data
-	{
-		if(System.IO.File.Exists(Application.persistentDataPath + "/save.json"))
-		{
-			System.IO.File.Delete(Application.persistentDataPath + "/save.json");
-		}
-	}	*/
 	[System.Serializable]
 	public class TasksData //Classe com os dados salvos
 	{
@@ -190,6 +119,7 @@ public class SaveSystem : MonoBehaviour //Continuar adpatando //Verificando se p
 			myActiveTasks = 0;
 		}
 	}
+
 
     /*private class AlreadyOpened
     {

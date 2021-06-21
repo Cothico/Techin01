@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Senior/Assets/Scenes/SkinSelect.unity
     guid: 4af2087a349a1794f92454c0135b32cb
+  - enabled: 1
+    path: Assets/Senior/Assets/Scenes/Cavalo.unity
+    guid: 12cd522721189a848a742ac493e062b8
   m_configObjects: {}

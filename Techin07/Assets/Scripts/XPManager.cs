@@ -13,23 +13,26 @@ public class XPManager : MonoBehaviour //Por enquanto 02/06 11:47 não estou usa
     //Ao entrar logado: compara json e firebase o maior substitui o menor. 
     //public Text levelTex;
     //public InputField inputPassWord;
-    public TMP_InputField nameText;
+    //public TMP_InputField nameText;
     User user = new User();
-
-    public static int forLevel;
+    //PlayerXP playerXP;
+    /*public static int forLevel;
     public static int intLevel;
     public static int carLevel;
     public static int habLevel;
     public static int forXp;
     public static int intXp;
     public static int carXp;
-    public static int habXp;
-    public static string playerName; //Vai precisar ter inserção de nome de usuário
+    public static int habXp;*/
+    //public static string playerName; //Vai precisar ter inserção de nome de usuário
+    public static int totalLevel;
 
     //public string password;
-    public GameObject menuScreen;
+    //public GameObject menuScreen;
 
-    // Start is called before the first frame update
+    private void Awake() {
+        //playerXP = FindObjectOfType<PlayerXP>();
+    }
     void Start()
     {
         //RetrieveFromDatabase();
@@ -40,30 +43,26 @@ public class XPManager : MonoBehaviour //Por enquanto 02/06 11:47 não estou usa
 
     public void OnSubmit()
     {
-        //if(inputPassWord.text == password)
-        //{
-            
-            /*playerLevel = playerLevel + 1;
-            user.userLevel = playerLevel;
-            levelTex.text = "Level: " + playerLevel;
-            Debug.Log(playerLevel + "player lvl sub");
-            Debug.Log(user.userLevel + "user lvl sub");
-            PostOnDatabase();*/
-        //}
+        //playerLevel = playerLevel + 1;
+        user.userLevel = totalLevel;
+        //levelTex.text = "Level: " + totalLevel;
+        Debug.Log(totalLevel + "player lvl sub");
+        Debug.Log(user.userLevel + "user lvl sub");
+        PostOnDatabase();
     }
 
     public void ConfirmUser()
     {
-        playerName = nameText.text;
+        //playerName = nameText.text;
         //Debug.Log(user.userLevel + "user lvl confirm");
-        forLevel = user.userForLevel;
-        intLevel = user.userIntLevel;
-        carLevel = user.userCarLevel;
-        habLevel = user.userHabLevel;
-        forXp = user.userForXp;
-        intXp = user.userIntXp;
-        carXp = user.userCarXp;
-        habXp = user.userHabXp;
+        PlayerXP.levelFor = user.userForLevel;
+        PlayerXP.levelInt = user.userIntLevel;
+        PlayerXP.levelCar = user.userCarLevel;
+        PlayerXP.levelHab = user.userHabLevel;
+        PlayerXP.xpFor = user.userForXp;
+        PlayerXP.xpInt = user.userIntXp;
+        PlayerXP.xpCar = user.userCarXp;
+        PlayerXP.xpHab = user.userHabXp;
     }
 
     public void OnGetData() //Entrar cria
@@ -76,38 +75,54 @@ public class XPManager : MonoBehaviour //Por enquanto 02/06 11:47 não estou usa
     {
         //playerLevel = user.userLevel;
         //forLevel = user.userForLevel;
-        forLevel = user.userForLevel;
-        intLevel = user.userIntLevel;
-        carLevel = user.userCarLevel;
-        habLevel = user.userHabLevel;
-        forXp = user.userForXp;
-        intXp = user.userIntXp;
-        carXp = user.userCarXp;
-        habXp = user.userHabXp;
+        PlayerXP.levelFor = user.userForLevel;
+        PlayerXP.levelInt = user.userIntLevel;
+        PlayerXP.levelCar = user.userCarLevel;
+        PlayerXP.levelHab = user.userHabLevel;
+        PlayerXP.xpFor = user.userForXp;
+        PlayerXP.xpInt = user.userIntXp;
+        PlayerXP.xpCar = user.userCarXp;
+        PlayerXP.xpHab = user.userHabXp;
         //levelTex.text = "Level: " + forLevel;
-        //Debug.Log(user.userLevel+ "user lvl updt");
-    }
-    
-    private void PostOnDatabase()
-    {
-        User user = new User();
-        RestClient.Put("https://techin01-91221-default-rtdb.firebaseio.com/"+ playerName + ".json", user);
+        Debug.Log(user.userLevel+ "user lvl updt");
     }
 
-    private void RetrieveFromDatabase()
+    public void UpdateStatusInParent()
     {
-        RestClient.Get<User>("https://techin01-91221-default-rtdb.firebaseio.com/"+ playerName + ".json").Then(response =>
+        //referencias de texto e tostring
+    }
+
+    public void UpdateStatusInChildren()
+    {
+        //referencias de texto e tostring
+    }
+
+    public void TotalLevel()
+    {
+        totalLevel = user.userForLevel + user.userIntLevel + user.userCarLevel + user.userHabLevel;
+        //levelTex.text = "Level: " + forLevel;
+    }
+    
+    public void PostOnDatabase()
+    {
+        User user = new User();
+        RestClient.Put("https://techin01-91221-default-rtdb.firebaseio.com/"/*+ playerName*/ + ".json", user);
+    }
+
+    public void RetrieveFromDatabase()
+    {
+        RestClient.Get<User>("https://techin01-91221-default-rtdb.firebaseio.com/"/*+ playerName*/ + ".json").Then(response =>
         {
             user = response;
             UpdateLevel();
-            //Debug.Log(user.userLevel);
+            Debug.Log(PlayerXP.levelFor);
             //Debug.Log(user.userName);
         });
     }
 
     public void OnEnableMenu() 
     {
-        playerName = nameText.text;
+        //playerName = nameText.text;
         RetrieveFromDatabase();
         //Debug.Log("user for xp "+user.userForXp);
     }

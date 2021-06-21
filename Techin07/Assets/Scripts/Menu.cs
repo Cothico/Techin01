@@ -7,28 +7,41 @@ using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
-    public GameObject /*5*/mainScreen, reponsavelScreen, criancaScreen, optionsScreen, /*0*/inicioScreen, /*1*/tutorial01, /*3*/loginScreen, /*4*/signScreen, /*2*/tutorial02, /*6*/menuAdmin;
+    public GameObject /*5*/mainScreen, reponsavelScreen, criarSenha, criancaScreen, optionsScreen, /*0*/inicioScreen, /*1*/tutorial01, /*3*/loginScreen, /*4*/signScreen, /*2*/tutorial02, /*6*/menuAdmin;
     public bool firstTime = true;
     XPManager xPM;
     BlocoTarefas blocoTarefas;
+    AuthManager authManager;
     public InputField inputPassWord;
-    public string password;
+    public string password = "040800";
+    public InputField inputCEmail;
+    public InputField inputCPassWord;
+    public InputField inputCNewPassWord;
+    public InputField inputCConfirmPassWord;
+    PlayerXP playerXP;
     User user = new User();
     //public bool isOptions = false;
 
     private void Awake() {
         xPM = GameObject.Find("portadorDoScript").GetComponent<XPManager>();
         blocoTarefas = FindObjectOfType<BlocoTarefas>();
+        playerXP = FindObjectOfType<PlayerXP>();
+        authManager = FindObjectOfType<AuthManager>();
     }
 
     void Start()
+    {
+        
+    }
+
+    public void IfFirstTime()
     {
         if(firstTime)
         {
             inicioScreen.SetActive(true);
             tutorial01.SetActive(false);
             tutorial02.SetActive(false);
-            loginScreen.SetActive(false);
+            //loginScreen.SetActive(false);
             signScreen.SetActive(false);
             mainScreen.SetActive(false);
             reponsavelScreen.SetActive(false);
@@ -41,7 +54,7 @@ public class Menu : MonoBehaviour
             inicioScreen.SetActive(false);
             tutorial01.SetActive(false);
             tutorial02.SetActive(false);
-            loginScreen.SetActive(false);
+            loginScreen.SetActive(true);
             signScreen.SetActive(false);
             mainScreen.SetActive(true);
             reponsavelScreen.SetActive(false);
@@ -96,8 +109,8 @@ public class Menu : MonoBehaviour
 
     public void SkipTutorial02() //tuto2, vai login
     {
-        if(firstTime)
-        {
+        //if(firstTime)
+        //{
             inicioScreen.SetActive(false);
             tutorial01.SetActive(false);
             tutorial02.SetActive(false);
@@ -107,7 +120,7 @@ public class Menu : MonoBehaviour
             reponsavelScreen.SetActive(false);
             criancaScreen.SetActive(false);
             optionsScreen.SetActive(false);
-        }
+        /*}
         else //tuto2, vai opt
         {
             inicioScreen.SetActive(false);
@@ -119,13 +132,13 @@ public class Menu : MonoBehaviour
             reponsavelScreen.SetActive(false);
             criancaScreen.SetActive(false);
             optionsScreen.SetActive(true);  
-        }
+        }*/
     }
 
     public void BackTutorial02() //login, vai tuto2
     {
-        if(firstTime)
-        {
+        //if(firstTime)
+        //{
             inicioScreen.SetActive(false);
             tutorial01.SetActive(false);
             tutorial02.SetActive(true);
@@ -135,8 +148,8 @@ public class Menu : MonoBehaviour
             reponsavelScreen.SetActive(false);
             criancaScreen.SetActive(false);
             optionsScreen.SetActive(false);
-        }
-        else
+        //}
+        /*else
         {
             inicioScreen.SetActive(false);
             tutorial01.SetActive(false);
@@ -147,7 +160,7 @@ public class Menu : MonoBehaviour
             reponsavelScreen.SetActive(false);
             criancaScreen.SetActive(false);
             optionsScreen.SetActive(true);
-        }
+        }*/
     }
 
     public void GoToSign()
@@ -165,40 +178,84 @@ public class Menu : MonoBehaviour
 
     public void BackToMenu()
     {
-        loginScreen.SetActive(false);
+        //loginScreen.SetActive(false);
         mainScreen.SetActive(true);
         reponsavelScreen.SetActive(false);
         criancaScreen.SetActive(false);
         optionsScreen.SetActive(false);
         menuAdmin.SetActive(false);
+        criarSenha.SetActive(false);
         firstTime = false;
     }
 
     public void GoToResponsavelScreen()
     {
+        authManager.LoadParentalPassword();
         mainScreen.SetActive(false);
         reponsavelScreen.SetActive(true);
         //criancaScreen.SetActive(true);
         optionsScreen.SetActive(false);
+        criarSenha.SetActive(false);
+        xPM.RetrieveFromDatabase();
+    }
+
+    public void OpenCriarSenha()
+    {
+        criarSenha.SetActive(true);
+    }
+
+    public void ConfirmSenha()
+    {
+        if(inputCEmail.text == authManager.LogedEmail && inputCPassWord.text == authManager.LogedPassword)
+        {
+            Debug.Log(authManager.LogedEmail + authManager.LogedPassword);
+            if(inputCNewPassWord.text == inputCConfirmPassWord.text && inputCNewPassWord.text != "")
+            {
+                password = inputCNewPassWord.text;
+                authManager.SaveParentalPassword();
+                inputCEmail.text = "";
+                inputCPassWord.text = "";
+                inputCNewPassWord.text = "";
+                inputCConfirmPassWord.text = "";
+                CloseCriarSenha();
+                Debug.Log(password);
+            }
+        }
+    }
+
+    public void CloseCriarSenha()
+    {
+        criarSenha.SetActive(false);
     }
 
     public void OpenMenuAdmin()
     {
         if(inputPassWord.text == password)
         {
-            inputPassWord.text = "";
+            //inputPassWord.text = "";
             reponsavelScreen.SetActive(false);
             menuAdmin.SetActive(true);
             blocoTarefas.UpdateTasks();
+            criarSenha.SetActive(false);
+            inputPassWord.text = "";
+            PlayerXP.totalLevel = PlayerXP.levelFor + PlayerXP.levelHab + PlayerXP.levelInt + PlayerXP.levelCar;
+            playerXP.ptot.text = PlayerXP.totalLevel.ToString();
+            playerXP.pfor.text = PlayerXP.levelFor.ToString();
+            playerXP.pint.text = PlayerXP.levelInt.ToString(); 
+            playerXP.pcar.text = PlayerXP.levelCar.ToString(); 
+            playerXP.phab.text = PlayerXP.levelHab.ToString();  
+            //authManager.SaveParentalPassword();
         }
     }
+
+
     public void GoToCriancaScreen()
     {
         /*mainScreen.SetActive(false);
         reponsavelScreen.SetActive(true);
         criancaScreen.SetActive(true);
         optionsScreen.SetActive(false);*/
-        SceneManager.LoadScene("Sc");
+        SceneManager.LoadScene("SkinSelect");
     }
     public void GoToOptions()
     {
@@ -222,16 +279,16 @@ public class Menu : MonoBehaviour
         optionsScreen.SetActive(false);
         if(xPM != null)
         {
-            xPM.nameText.text = "";
+            //xPM.nameText.text = "";
 
-            XPManager.forLevel = 0;
-            XPManager.intLevel = 0;
-            XPManager.carLevel = 0; //
-            XPManager.habLevel = 0;
-            XPManager.forXp = 0;
-            XPManager.intXp = 0;
-            XPManager.carXp = 0; //
-            XPManager.habXp = 0;
+            PlayerXP.levelFor = 0;
+            PlayerXP.levelInt = 0;
+            PlayerXP.levelCar = 0;
+            PlayerXP.levelHab = 0;
+            PlayerXP.xpFor = 0;
+            PlayerXP.xpInt = 0;
+            PlayerXP.xpCar = 0;
+            PlayerXP.xpHab = 0;
             user.userForLevel = 0;
             user.userIntLevel = 0;
             user.userCarLevel = 0;
@@ -239,9 +296,13 @@ public class Menu : MonoBehaviour
             user.userForXp = 0;
             user.userIntXp = 0;
             user.userCarXp = 0;
-            user.userHabXp = 0; //
+            user.userHabXp = 0;
+            SavePrefs.instance.prefData.userEmail = "";
+            SavePrefs.instance.prefData.userPassword = "";
+            authManager.SaveUser();
             //xPM.levelTex.text = "Level: " + user.userForLevel;
             xPM.UpdateLevel();
+
         }
     }
     public void OnApplicationQuit()

@@ -69,10 +69,6 @@ public class BlocoTarefas : MonoBehaviour //Meu //interações no menu de tarefa
             xpAmount = 0;
         }
 
-        if(Input.GetKeyDown(KeyCode.M))
-	    {
-	    	SavePlayer();
-	    }
         //if(tasks[] == 0)
         //{
 
@@ -258,6 +254,7 @@ public class BlocoTarefas : MonoBehaviour //Meu //interações no menu de tarefa
         }
         UpdateTasksIcon();
         editorTabela.SetActive(false);
+        SavePlayer();
         //descricao.text = "";
         //UpdateTaskData();
         //isConfirming = true;

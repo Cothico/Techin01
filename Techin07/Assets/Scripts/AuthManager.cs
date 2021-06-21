@@ -7,6 +7,7 @@ using TMPro;
 
 public class AuthManager : MonoBehaviour
 {
+    public GameObject loadingScreen;
     Menu menu;
     [Header("Firebase")]
     public DependencyStatus dependencyStatus;
@@ -27,9 +28,12 @@ public class AuthManager : MonoBehaviour
     public TMP_InputField passwordRegisterField;
     public TMP_InputField passwordRegisterVerifyField;
     public TMP_Text warningRegisterText;
+    public string LogedEmail;
+    public string LogedPassword;
 
     private void Awake() 
     {
+        loadingScreen.SetActive(true);
         menu = FindObjectOfType<Menu>();
         //Check that all of the necessary dependencies for Firebase are present on the system
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
@@ -39,12 +43,21 @@ public class AuthManager : MonoBehaviour
             {
                 //If they are avalible Initialize Firebase
                 InitializeFirebase();
+
             }
             else
             {
                 Debug.LogError("Could not resolve all Firebase dependencies: " + dependencyStatus);
             }
         });
+
+        StartCoroutine(Tempinho());
+        menu.IfFirstTime();
+    }
+
+    private void Start() {
+        
+
     }
 
     private void InitializeFirebase()
@@ -99,16 +112,21 @@ public class AuthManager : MonoBehaviour
                     break;
             }
             warningLoginText.text = message;
+            loadingScreen.SetActive(false);
         }
         else
         {
             //User is now logged in
             //Now get the result
+            LogedEmail = emailLoginField.text;
+            LogedPassword = passwordLoginField.text;
             User = LoginTask.Result;
             Debug.LogFormat("User signed in successfully: {0} ({1})", User.DisplayName, User.Email);
             warningLoginText.text = "";
             confirmLoginText.text = "Logged In";
             menu.BackToMenu();
+            SaveUser();
+            loadingScreen.SetActive(false);
         }
     }
 
@@ -190,6 +208,45 @@ public class AuthManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void SaveUser() //Falta chamar
+    {
+        SavePrefs.instance.prefData.isGameStart = false;
+        SavePrefs.instance.prefData.userEmail = LogedEmail;
+        SavePrefs.instance.prefData.userPassword = LogedPassword;
+        SavePrefs.instance.Save();
+    }
+
+    public void SaveParentalPassword()
+    {
+        SavePrefs.instance.prefData.parentalPassword = menu.password;
+        //menu.password = SaveSystem.instance.prefData.parentalPassword;
+        //menu.inputPassWord.text = "";
+        SavePrefs.instance.Save();
+    }
+
+    public void LoadUser()
+    {
+        SavePrefs.instance.Load();
+        LogedEmail = SavePrefs.instance.prefData.userEmail;
+        emailLoginField.text = SavePrefs.instance.prefData.userEmail;
+        LogedPassword = SavePrefs.instance.prefData.userPassword;
+        passwordLoginField.text = SavePrefs.instance.prefData.userPassword;
+        menu.firstTime = SavePrefs.instance.prefData.isGameStart;
+    }
+
+    IEnumerator Tempinho()
+    {
+        yield return new WaitForSeconds(4f);
+        LoadUser();
+        StartCoroutine(Login(LogedEmail, LogedPassword));
+    }
+
+    public void LoadParentalPassword()
+    {
+        SavePrefs.instance.Load();
+        menu.password = SavePrefs.instance.prefData.parentalPassword;
     }
 }
 

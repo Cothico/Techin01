@@ -11,7 +11,7 @@ public class ColectGens : MonoBehaviour
     public AudioSource somGensColect;
     //public TextMeshPro scoreTxt;   
     public static int scoreAcess;
-    private int score;
+    public int score;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +37,7 @@ public class ColectGens : MonoBehaviour
         {
             somGensColect.enabled = true;
             score = score + 1;
-            Destroy(col.gameObject);
+            //Destroy(col.gameObject);
         }
     }
 }

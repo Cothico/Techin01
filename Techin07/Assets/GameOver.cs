@@ -8,10 +8,20 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI pointsText;
+    [SerializeField] TextMeshProUGUI record;
+
+    //ColectGens colectGens;
+    ScoreSave scoreSave;
+    ColectGens colectG;
     public void Setup(int score)
-    {       
+    {
+        //colectGens = GetComponent<ColectGens>();
+        colectG = GetComponent<ColectGens>();
+        scoreSave = GetComponent<ScoreSave>();
+
         gameObject.SetActive(true);
-        pointsText.text = "Pontuação: " + ScoreSave.scoreMaxAcess.ToString(); 
+        pointsText.text = "Record: " + ScoreSave.scoreMaxAcess.ToString();
+        record.text = "Pontuação: " + ColectGens.scoreAcess.ToString();
         //intsText.text = score.ToString() + " PONTUAÇÂO";
     }
 

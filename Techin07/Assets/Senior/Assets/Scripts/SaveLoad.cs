@@ -24,7 +24,6 @@ public class SaveLoad : MonoBehaviour
         cabeloProb = FindObjectOfType<CabeloProb>();
 
         StartCoroutine(TavaNoStart());
-        Debug.Log("awake");
 
         //cabeloProb = FindObjectOfType<CabeloProb>();
     }
@@ -32,8 +31,6 @@ public class SaveLoad : MonoBehaviour
     {
         PlayerLoad();
         UpdateSkins();
-        Debug.Log("start");
-
     }
 
     // Update is called once per frame
@@ -102,7 +99,6 @@ public class SaveLoad : MonoBehaviour
 
     public void UpdateSkins()
     {
-        Debug.Log("update skin");
         if(cabeloProb.isCabeloC == false)
         {
             cabeloSkin.NotIsCabeloC();

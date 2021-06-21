@@ -15,6 +15,9 @@ TagManager:
   - Border
   - MovingGround
   - Coin
+  - Inimigo
+  - Espada
+  - CheckCarisma
   layers:
   - Default
   - TransparentFX

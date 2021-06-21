@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8247814442931435038}
   - component: {fileID: 8247814442931435033}
   - component: {fileID: -3552153278139587090}
+  - component: {fileID: 7544210499403060885}
   m_Layer: 0
   m_Name: ManaOBJ
   m_TagString: Mana
@@ -133,6 +134,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMadera: 0
-  audioMoeda: {fileID: 112425503169210557, guid: 52ed566e5ea76eb4abf0908d5d9e6d59,
-    type: 3}
+  audioMoeda: {fileID: 112425503169210557, guid: 52ed566e5ea76eb4abf0908d5d9e6d59, type: 3}
   newAudio: {fileID: 0}
+--- !u!114 &7544210499403060885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8247814442931435037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a92d8b83eca97e4a96e6d198298de80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

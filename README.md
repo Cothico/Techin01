@@ -1,4 +1,4 @@
 # Techin01
- TH
+ Thiago Moreira, Beatriz Quoos, Andrei Quint
 
 Tarefas de Heróis

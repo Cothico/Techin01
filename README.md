@@ -4,5 +4,5 @@
 Tarefas de Heróis
 
 Localização scripts:
-Techin07>Assets>Scripts
-Techin07>Assets>Senior>Assets>Scripts
+-Techin07>Assets>Scripts
+-Techin07>Assets>Senior>Assets>Scripts
